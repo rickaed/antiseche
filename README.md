@@ -1,6 +1,5 @@
-# Checkpoint 1 - Angular
+# Checkpoint 2 - Angular
 
-Ton premier checkpoint ☺️
 
 **!!! PREMIERE ETAPE OBLIGATOIRE AVANT DE COMMENCER LE PREMIER EXERCICE !!!**
 
@@ -82,8 +81,3 @@ Le challenge sera considéré comme un succès si :
   - leurs dates de sortie
   - leurs nombres de musiques
 
-## Bonus: HTML & CSS3
-
-### Attention, ce test est à réaliser sans Boostrap, tu devras utiliser flexbox à la place !
-
-Suis les instructions contenues dans le fichier > [index.html](bonus/index.html)
