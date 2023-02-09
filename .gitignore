@@ -1,0 +1,7 @@
+/node_modules
+
+/site-angular/dist
+/site-angular/tmp
+/site-angular/out-tsc
+/site-angular/bazel-out
+/site-angular/node_modules
