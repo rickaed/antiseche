@@ -43,11 +43,12 @@ Tu vas afficher une liste d'artistes(3) et au clique sur l'un des artistes, tu a
 ### 1ere étape
 
 #### 🚨🚨 Attention, à bien lire 🚨🚨
-  ***Faire bien attention à se rendre dans le dossier du projet, lancer un "npm install" pour installer les packages nécessaires***
-  ***Faire bien attention à lancer le projet avec la commande "npm start"***
-  ***Cette commande à été configurer pour vous lancer le serveur de l'application angular ainsi que celui de notre fausse API ***
-  ***L'adresse de l'api est celle-ci http://localhost:4080/api/MaRessource: example http://localhost:4080/api/artists***
+- Rends toi dans le dossier du projet, lance un `npm install` pour installer les packages nécessaires
+- Fais bien attention à lancer le projet avec la commande `npm start`
 
+Cette commande à été configurée pour lancer à la fois le serveur de l'application Angular et celui de la "fausse" API que tu utiliseras pendant ce Checkpoint.
+L'adresse de l'api est: http://localhost:4080/api/MaRessource
+Ex: http://localhost:4080/api/artists
 
 Tu auras besoin de deux routes : 
 - "/artists" qui affichera la liste des artistes
