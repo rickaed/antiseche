@@ -24,11 +24,11 @@ export class AlbumsComponent implements OnInit {
     });
     return this.http.get<Album[]>(`http://localhost:4080/api/artists/""/albums`).subscribe(data => {
       console.log('response :', data);
-      this.albums=(data.filter((ele: Album) => {
+      this.albums=data.filter((ele: Album) => {
         ele.artists[0].id=this.artistId
-      });)
+      });
       console.log(this.albums)
-    })
+    });
   }
 
 }
