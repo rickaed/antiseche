@@ -6,7 +6,7 @@ import { ArtistsComponent } from './artists/artists.component';
 const routes: Routes = [
   { path: 'artists', component: ArtistsComponent },
   // <a [routerLink]="['/artists']">artists</a>
-  { path: 'artists/{id}/albums', component: AlbumsComponent },
+  { path: "artists/:id/albums", component: AlbumsComponent },
   // <a [routerLink]="['/artists/{id}/albums'']">album</a>
   {path: '', redirectTo: '/artists', pathMatch: 'full' }
 ];
