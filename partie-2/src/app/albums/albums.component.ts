@@ -13,10 +13,11 @@ export class AlbumsComponent implements OnInit {
   artistId!: string;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
-  public albums!: Album[];
+  public albums: Album[] = [];
 
 
   ngOnInit() {
+    this.albums=[]
     this.routeSub = this.route.params.subscribe(params => {
       // console.log(params) //log the entire params object
       console.log(params['id']) //log the value of id
@@ -24,17 +25,15 @@ export class AlbumsComponent implements OnInit {
     });
     return this.http.get<Album[]>(`http://localhost:4080/api/artists/${this.artistId}/albums`).subscribe(data => {
       console.log('response :', data);
-      data.forEach((album:Album )=> {
-        if (album.artists[0].id === this.artistId)
-        console.log(album.name);
-        
-        this.albums.push(album)
+      data.forEach((album: Album) => {
+        if (album.artists[0].id === this.artistId){
+        this.albums.push(album);
+          console.log(album.artists[0].name);
+        console.log(album);
+      }      
       });
-      console.log(this.albums)
-        // album.artists[0].id=this.artistId
-      });
-      // console.log(this.albums)
-    };
-  }
+    });
+  };
+}
 
 
