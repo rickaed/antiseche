@@ -1,8 +1,8 @@
 import { Image } from "./image";
 
 export class Artist {
-    followers !: { total: number };
+    followers!: { total: number };
     id!: string;
-    images !: Image[];
+    images!: Image[];
     name!: string;
 }

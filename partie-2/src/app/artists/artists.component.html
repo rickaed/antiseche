@@ -1,1 +1,15 @@
-<p>artists works!</p>
+
+    <h2>Les Artistes</h2>
+    <section>
+    <div class="card" *ngFor="let artist of artists">
+        <h3 (click)="onArtist(artist.id)">{{artist.name}}</h3>
+        <p>{{artist.followers.total |number}} followers</p>
+        <img [src]="artist.images[1].url" [alt]="'image de :'+ artist.name" (click)="onArtist(artist.id)">
+    </div>
+</section>
+
+
+
+<!-- Que les 3 photos avec le nom des artistes et leurs nombres de followers au format 100,000,000 apparaîssent sur cette page.
+    Que je peux cliquer sur les noms ET les photos.
+    Qu'au click, je suis redirigé vers /artists/{id de l'objet}/albums -->
