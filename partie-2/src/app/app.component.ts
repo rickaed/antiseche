@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Album } from './models/album';
+import { Artist } from './models/artist';
 const artists = require('../assets/resources/artists.json');
 const albums = require('../assets/resources/albums.json');
 
@@ -8,6 +10,6 @@ const albums = require('../assets/resources/albums.json');
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public artists = artists;
-  public albums = albums;
+  public artists :Artist[]= artists;
+  public albums :Album[]= albums;
 }
