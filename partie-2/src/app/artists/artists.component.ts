@@ -15,11 +15,9 @@ export class ArtistsComponent implements OnInit {
 
   ngOnInit() {
     return this.http.get<Artist[]>(`http://localhost:4080/api/artists`).subscribe(data => {
-      // console.log('ma data :', data);
       data.forEach((artist: Artist) => {
         this.artists.push(artist)
       });
-      // console.log('ma const :', this.artists)
     })
   };
 

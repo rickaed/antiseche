@@ -4,6 +4,6 @@
         <h3 [routerLink]="['/artists', artist.id,'albums']">{{artist.name}}</h3>
         <p>{{artist.followers.total |number}} followers</p>
         <img [src]="artist.images[1].url" [alt]="'image de :'+ artist.name"
-            [routerLink]="['/artist', artist.id,'album']">
+            [routerLink]="['/artists', artist.id,'albums']">
     </div>
 </section>

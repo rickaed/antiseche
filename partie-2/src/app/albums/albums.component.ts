@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Album } from '../models/album';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,27 +13,22 @@ export class AlbumsComponent implements OnInit {
   artistId!: string;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
-  public albums: Album[] = [];
-
+  public albums!: Album[];
 
   ngOnInit() {
-    this.albums=[]
+    this.albums = []
     this.routeSub = this.route.params.subscribe(params => {
-      // console.log(params) //log the entire params object
-      console.log(params['id']) //log the value of id
+      // console.log(params['id']) //log the value of id
       this.artistId = params['id']
     });
+
     return this.http.get<Album[]>(`http://localhost:4080/api/artists/${this.artistId}/albums`).subscribe(data => {
       console.log('response :', data);
-      data.forEach((album: Album) => {
-        if (album.artists[0].id === this.artistId){
-        this.albums.push(album);
-          console.log(album.artists[0].name);
-        console.log(album);
-      }      
-      });
+      this.albums = data.filter(album => album.artists[0].id === this.artistId)
+      this.albums = this.albums.filter(
+        (obj, index) =>
+          this.albums.findIndex((item) => item.name === obj.name) === index
+      );
     });
   };
 }
-
-
