@@ -1,12 +1,9 @@
-
-    <h2>Les Artistes</h2>
-    <section>
+<h2>Les Artistes</h2>
+<section>
     <div class="card" *ngFor="let artist of artists">
-        <h3 [routerLink]="['/artists', artist.id,'albums']" (click)="onSendId(artist.id)">{{artist.name}}</h3>
+        <h3 [routerLink]="['/artists', artist.id,'albums']">{{artist.name}}</h3>
         <p>{{artist.followers.total |number}} followers</p>
-        <img [src]="artist.images[1].url" [alt]="'image de :'+ artist.name" [routerLink]="['/artist', artist.id,'album']" (click)="onSendId(artist.id)">
+        <img [src]="artist.images[1].url" [alt]="'image de :'+ artist.name"
+            [routerLink]="['/artist', artist.id,'album']">
     </div>
 </section>
-
-
-
