@@ -16,12 +16,20 @@ export class AlbumsComponent implements OnInit {
   public albums!: Album[];
 
   ngOnInit() {
+    this.getIdArtist();
+    this.getAlbumList()
+
+  };
+  
+  getIdArtist() {
     this.albums = []
     this.routeSub = this.route.params.subscribe(params => {
       // console.log(params['id']) //log the value of id
       this.artistId = params['id']
     });
+  };
 
+  getAlbumList() {
     return this.http.get<Album[]>(`http://localhost:4080/api/artists/${this.artistId}/albums`).subscribe(data => {
       console.log('response :', data);
       this.albums = data.filter(album => album.artists[0].id === this.artistId)
@@ -30,5 +38,5 @@ export class AlbumsComponent implements OnInit {
           this.albums.findIndex((item) => item.name === obj.name) === index
       );
     });
-  };
+  }
 }

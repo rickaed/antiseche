@@ -14,11 +14,13 @@ export class ArtistsComponent implements OnInit {
   public artists: Artist[] = [];
 
   ngOnInit() {
+    this.getArtistList()
+  };
+  getArtistList() {
     return this.http.get<Artist[]>(`http://localhost:4080/api/artists`).subscribe(data => {
       data.forEach((artist: Artist) => {
         this.artists.push(artist)
       });
     })
-  };
-
+  }
 }
