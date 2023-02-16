@@ -17,14 +17,12 @@ export class AlbumsComponent implements OnInit {
 
   ngOnInit() {
     this.getIdArtist();
-    this.getAlbumList()
-
+    this.getAlbumList();
   };
   
   getIdArtist() {
     this.albums = []
     this.routeSub = this.route.params.subscribe(params => {
-      // console.log(params['id']) //log the value of id
       this.artistId = params['id']
     });
   };
